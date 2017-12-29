@@ -35,24 +35,20 @@ class App extends Component {
         <header role='header'>
           <h1>Weather Dashboard</h1>
         </header>
-        <main role='main'>
-          <SearchBar />
-          <div>
-            <WeatherStatusWidget
-              widgetTitle='Current Temp'
-              widgetData={data.consolidated_weather[0].the_temp}
-            />
-            <WeatherStatusWidget
-              widgetTitle='Current Weather'
-              widgetData={data.consolidated_weather[0].weather_state_name}
-            />
-            <WeatherStatusWidget
-              widgetTitle='Sundown'
-              widgetData={data.sun_set}
-            />
-          </div>
-          <WeatherForecastChart />
-        </main>
+        <SearchBar />
+        <WeatherStatusWidget
+          widgetTitle='Current Temp'
+          widgetData={data.consolidated_weather[0].the_temp}
+        />
+        <WeatherStatusWidget
+          widgetTitle='Current Weather'
+          widgetData={data.consolidated_weather[0].weather_state_name}
+        />
+        <WeatherStatusWidget
+          widgetTitle='Sundown'
+          widgetData={data.sun_set}
+        />
+        <WeatherForecastChart data={data.consolidated_weather} />
       </div>
     )
   }

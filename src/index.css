@@ -1,5 +1,113 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  background-color: #fafafa;
+  color: #212121;
+  font-family: 'Open Sans', 'sans-serif';
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 2rem;
+}
+
+h1, h2, p {
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-bottom: 0.125rem;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+form {
+  padding: 1.5rem;
+  text-align:center;
+}
+
+input {
+  border: solid 1px #CCCCCC;
+  font-size: 0.625rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+button {
+  background-color: #3F51B5;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0px 1px 3px 1px rgba(172,172,172,1);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1.5rem;
+  transition: ease;
+}
+
+button:hover {
+  background-color: #606fc7;
+  box-shadow: 0px 2px 4px 0px rgba(122,122,122,1);
+}
+
+button:active {
+  background-color: #b5a33f;
+  box-shadow: none;
+}
+
+.App {
+  max-width: 58rem;
+  margin: 0 1rem;
+  display: grid;
+}
+
+/* no grid support? */
+
+.App {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.App {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2rem;
+}
+
+header, .search, .chart, article {
+  background-color: #FFF;
+  border-radius: 2px;
+  box-shadow: 0px 1px 3px 1px rgba(172,172,172,1);
+  flex: 0 1 100%;
+}
+
+header, .search, .chart {
+  grid-column: 1 / -1;
+}
+
+.App > * {
+  padding: 1.5rem;
+  font-size: 150%;
+  margin-bottom: 1.5rem;
+}
+
+@supports (display: grid) {
+  .App > * {
+    margin: 0;
+  }
 }

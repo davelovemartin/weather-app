@@ -3,9 +3,8 @@ import React, { Component } from 'react'
 class SearchBar extends Component {
   render () {
     return (
-      <div>
+      <div className='search'>
         <form role='search'>
-          <label for='search'>Search for Location:</label>
           <input
             type='text'
             value=''
