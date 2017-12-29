@@ -5,10 +5,13 @@
 body {
   background-color: #fafafa;
   color: #212121;
-  font-family: 'Helvetica', 'sans-serif';
   font-size: 16px;
   line-height: 1.5;
   margin: 2rem;
+}
+
+body, .highcharts-root > * {
+  font-family: 'Helvetica', 'sans-serif';
 }
 
 h1, h2, p, form {
@@ -94,6 +97,11 @@ header, .search, .chart, article {
   border-radius: 2px;
   box-shadow: 0px 1px 3px 1px rgba(172,172,172,1);
   flex: 0 1 100%;
+}
+
+/* TODO: highcharts bug? */
+.highcharts-container, .highcharts-container svg {
+  width: 100% !important;
 }
 
 header, .search, .chart {
