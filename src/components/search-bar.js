@@ -1,17 +1,33 @@
 import React, { Component } from 'react'
 
 class SearchBar extends Component {
+  constructor (props) {
+    super(props)
+    this.handleClick = this.handleClick.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange = (e) => this.props.onLocationChange(e.target.value)
+  handleClick (e) {
+    e.preventDefault()
+    this.props.onSearchClick()
+  }
+
   render () {
+    const location = this.props.location
     return (
       <div className='search'>
         <form role='search'>
           <input
             type='text'
-            value=''
+            value={location}
+            onChange={this.handleChange}
             name='search'
-            placeholder='Search'
           />
-          <button aria-label='Do search'>Submit</button>
+          <button
+            onClick={this.handleClick}
+            type='submit'
+          >Submit</button>
         </form>
       </div>
     )
