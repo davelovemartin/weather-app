@@ -25,6 +25,7 @@ class SearchBar extends Component {
             name='search'
           />
           <button
+            disabled={this.props.disabled}
             onClick={this.handleClick}
             type='submit'
           >Submit</button>

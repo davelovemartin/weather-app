@@ -168,13 +168,14 @@ class App extends Component {
           <h1>Weather Dashboard</h1>
         </header>
         <SearchBar
-          value={location}
+          disabled={this.state.loading}
           onLocationChange={this.handleLocationChange}
           onSearchClick={this.handleLocation}
+          value={location}
         />
         <WeatherStatusWidget
           widgetTitle='Current Temp'
-          widgetData={this.state.loading ? <Skeleton /> : this.state.data.consolidated_weather[0].the_temp}
+          widgetData={this.state.loading ? <Skeleton /> : Math.round(this.state.data.consolidated_weather[0].the_temp) + '˚C'}
         />
         <WeatherStatusWidget
           widgetTitle='Current Weather'
